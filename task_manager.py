@@ -20,18 +20,23 @@ def add_task(description):
     save_tasks(tasks) # Saves the task to the json file
     print("Task added successfully!")
 
+# A helper function that prints out each task according to the function that calls it to perform it's action
+def display_task(task):
+    print(f"Task ID: {task['id']}")
+    print(f"Description: {task['description']}")
+    print(f"Status: {task['status']}")
+    print(f"Time Created: {task['createdAt']}")
+    print(f"Time Updated: {task['updatedAt']}")
+    print()
+
 # A functionn used to list all takes in the json file in the CLI
 def list_tasks():
     tasks = load_tasks()
 
     # A condition for looping through each task in tasks in the json file
     for task in tasks:
-        print(f"Task ID: {task['id']}")
-        print(f"Description: {task['description']}")
-        print(f"Status: {task['status']}")
-        print(f"Time Created: {task['createdAt']}")
-        print(f"Time Updated: {task['updatedAt']}")
-        print()
+        display_task(task)
+        
 
 # A function used to delete task from the json file by taking in the preferred task to be deleted a an argument for task_id
 def delete_task(task_id):
@@ -88,3 +93,9 @@ def mark_done(task_id):
     
     print("Task Not Found!")
     
+def list_tasks_by_status(status):
+    tasks  = load_tasks()
+
+    for task in tasks:
+        if status == task['status']:
+            display_task(task)

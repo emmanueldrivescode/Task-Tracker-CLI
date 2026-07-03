@@ -9,7 +9,7 @@ def load_tasks():
     # Checks if the json file doesnt exist to create it by itself and return an empty list
     if not os.path.exists(file_name):
         with open(file_name, "w") as file:
-            json.dump([], file, indent=2)
+            json.dump([], file, indent=3)
         return []
     
     # Chesks if the file exist so as to read from the json file and return the information it contains as a list
@@ -20,4 +20,4 @@ def load_tasks():
 # A function that takes tasks as an argumentand saves it to the json file 
 def save_tasks(tasks):
     with open(file_name, "w") as file:
-        json.dump(tasks, file, indent=2)
+        json.dump(tasks, file, indent=3)
