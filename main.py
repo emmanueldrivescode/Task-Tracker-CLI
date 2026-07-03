@@ -24,7 +24,7 @@ if len(sys.argv) < 2:
             description = sys.argv[2]
             add_task(description)
 
-# ------------- LIST -------------
+ # ------------- LIST -------------
     elif command == "list":
         
         if len(sys.argv) == 2:
@@ -41,7 +41,7 @@ if len(sys.argv) < 2:
             print("python main.py list")
             print("python main.py list <todo|in-progress|done>")
 
-# --------------- DELETE ----------------
+ # --------------- DELETE ----------------
     elif command == "delete":
         if len(sys.argv) < 3:
             print("Usage: python main.py delete <id>")
@@ -52,7 +52,7 @@ if len(sys.argv) < 2:
             except ValueError:
                 print("Task ID must be a number")
 
-# ----------------- UPDATE --------------------
+ # ----------------- UPDATE --------------------
     elif command == "update":
         if len(sys.argv) < 4:
             print('Usage: python main.py update <id> "New Description"')
@@ -64,7 +64,7 @@ if len(sys.argv) < 2:
             except ValueError:
                 print("Task ID must be a number.")
 
-# ------------------ MARK-IN-PROGRESS-------------------
+ # ------------------ MARK-IN-PROGRESS-------------------
     elif command == "mark-in-progress":
         if len(sys.argv) < 3:
             print("Usage: python main.py mark-in-progress <id>")
@@ -74,7 +74,7 @@ if len(sys.argv) < 2:
                 mark_in_progress(task_id)
             except ValueError:
                 print("Task ID must be a number.")
-# ----------------- MARK-DONE------------------
+ # ----------------- MARK-DONE------------------
     elif command == "mark-done":
         if len(sys.argv) < 3:
             print("Usage: python main.py mark-done <id>")
