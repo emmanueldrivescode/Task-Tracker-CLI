@@ -1,4 +1,4 @@
-from storage import load_tasks, save_tasks
+from storage import load_tasks as load, save_tasks
 from models import create_task
 from datetime import datetime
 
@@ -6,7 +6,7 @@ from datetime import datetime
 def add_task(description):
 
     # A varable used to load tasks available before adding a new one
-    tasks = load_tasks()
+    tasks = load()
 
     # Checks if tasks is empty or not so as to keep adding or just start a new one with a new ID
     if tasks:
@@ -31,7 +31,7 @@ def display_task(task):
 
 # A functionn used to list all takes in the json file
 def list_tasks():
-    tasks = load_tasks()
+    tasks = load()
 
     # A condition for looping through each task in tasks in the json file
     for task in tasks:
@@ -39,7 +39,7 @@ def list_tasks():
 
 # A function used to delete task from the json file
 def delete_task(task_id):
-    tasks = load_tasks()
+    tasks = load()
 
     for task in tasks:
         if task['id'] == task_id:
@@ -48,7 +48,7 @@ def delete_task(task_id):
             print("Task deleted successfully!")
 
 def update_task(task_id, description):
-    tasks = load_tasks()
+    tasks = load()
 
     for task in tasks:
         if task['id'] == task_id:
@@ -63,7 +63,7 @@ def update_task(task_id, description):
     print("Task ID Not Found!")
 
 def mark_in_progress(task_id):
-    tasks =load_tasks()
+    tasks =load()
 
     for task in tasks:
         if task['id'] == task_id:
@@ -78,7 +78,7 @@ def mark_in_progress(task_id):
     print("Task Not Found!")
 
 def mark_done(task_id):
-    tasks = load_tasks()
+    tasks = load()
 
     for task in tasks:
         if task['id'] == task_id:
@@ -93,7 +93,7 @@ def mark_done(task_id):
     print("Task Not Found!")
     
 def list_tasks_by_status(status):
-    tasks  = load_tasks()
+    tasks  = load()
 
     for task in tasks:
         if status == task['status']:
