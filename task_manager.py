@@ -14,13 +14,13 @@ def add_task(description):
     else:
         new_id = 1
     
-    # A variable used to call the create_task function so as to take in the ID as an argument (i.e. new_id)
+    # A variable used to call the create_task function so as to take in the ID and description to be added as an argument (i.e. new_id)
     new_task = create_task(new_id, description)
-    tasks.append(new_task) # Adds the task to the current one 
+    tasks.append(new_task) # Adds the task to the loaded taskss
     save_tasks(tasks) # Saves the task to the json file
     print("Task added successfully!")
 
-# A helper function that prints out each task according to the function that calls it to perform it's action
+# A helper function that prints out each task
 def display_task(task):
     print(f"Task ID: {task['id']}")
     print(f"Description: {task['description']}")
@@ -29,16 +29,15 @@ def display_task(task):
     print(f"Time Updated: {task['updatedAt']}")
     print()
 
-# A functionn used to list all takes in the json file in the CLI
+# A functionn used to list all takes in the json file
 def list_tasks():
     tasks = load_tasks()
 
     # A condition for looping through each task in tasks in the json file
     for task in tasks:
         display_task(task)
-        
 
-# A function used to delete task from the json file by taking in the preferred task to be deleted a an argument for task_id
+# A function used to delete task from the json file
 def delete_task(task_id):
     tasks = load_tasks()
 
