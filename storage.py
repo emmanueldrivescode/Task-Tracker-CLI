@@ -12,7 +12,7 @@ def load_tasks():
             json.dump([], file, indent=3)
         return []
     
-    # Chesks if the file exist so as to read from the json file and return the information it contains as a list
+    # Checks if the file exist so as to read from the json file and return the information it contains as a list
     if os.path.exists(file_name):
         with open(file_name, "r") as file:
             return json.load(file)
