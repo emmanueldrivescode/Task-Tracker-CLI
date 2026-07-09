@@ -135,12 +135,6 @@ This project helped me strengthen my understanding of:
 - Colorful terminal output
 - Interactive menu mode
 
-## 👨‍💻 Author
-
-**Emmanuel Dairo**
-
-GitHub: https://github.com/emmanueldrivescode
-
----
+GitHub repo: https://github.com/emmanueldrivescode/Task-Tracker-CLI
 
 This project was built as part of my Python backend development journey to improve my problem-solving skills by building real-world projects.
